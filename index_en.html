@@ -1,0 +1,2981 @@
+<!DOCTYPE html>
+
+
+
+<html>
+    <head>
+	
+	
+		<meta charset="utf-8" />
+		<meta property="og:image" content="img/go_icon.png">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">
+        
+        <title>GOSAFE</title>
+		
+		
+		<!----offline---->
+		
+
+	 
+        <!-- JQuery -->
+		 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	
+		<!-- leaflet-->
+  
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+
+        <link rel="icon" type="image/png" href="img/go_icon.png" />
+
+
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+		
+		 <!--- SUBMIT--->
+	
+
+
+        <!-- shapefiles -->
+
+
+        <script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.3.0/dist/MarkerCluster.css">
+
+
+       
+        <script src="data/moschato.js"></script>
+        <script src="data/alimos.js"></script>
+        <script src="data/rampes_moschato.js"></script>
+        <script src="data/rampes_alimos.js"></script>
+        <script src="data/pois_moscha_english.js"></script>
+        <script src="data/pois_alimos_english.js"></script>
+		<script src="data/diavaseis_alimos.js"></script>
+		<script src="data/diavaseis_moschato.js"></script>
+		<script src="data/oria_moschato.js"></script>
+		<script src="data/oria_alimos.js"></script>
+		
+		
+		 <!---<script src="data/app_central.js"></script>
+		
+		
+		 <!---<script src="js/application.js"></script>--->
+        <script src="js/Autolinker.min.js"></script>
+
+	<script src="https://unpkg.com/pouchdb@^5.2.0/dist/pouchdb.js"></script>
+	<!---<script src="https://unpkg.com/leaflet.tilelayer.pouchdbcached@latest/L.TileLayer.PouchDBCached.js"></script>--->
+ 
+ 
+ 
+ 
+ 
+
+        <!-- sidebar -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+
+	
+
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/sidebar-themes.css">
+
+        <script src="js/L.Control.Window.js"></script>
+
+        <!--  -->
+
+        <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+		
+        <script src="js/main.js"></script>
+		
+			<!--  google API -->
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBshbJc0U7auaRdZjdplhJuDCq_MTjqlPE" async defer></script>
+		<!--  mdbootstrap -->
+		 
+				<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+		<!-- Bootstrap core CSS -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Material Design Bootstrap -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.5/css/mdb.min.css" rel="stylesheet">
+		
+				
+		<!-- Bootstrap tooltips -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<!-- MDB core JavaScript -->
+		<!--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.5/js/mdb.min.js"></script>-->
+
+
+        <!-- geolocation-->
+        <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.62.0/src/L.Control.Locate.min.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+		<!-- POPUP POIS-->
+		<script src="js/L.Control.Window.js"></script>
+        <link rel="stylesheet" href="css/L.Control.Window.css">
+
+        <!-- ruler-->
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/gokertanrisever/leaflet-ruler/master/src/leaflet-ruler.css">
+        <script src="https://cdn.rawgit.com/gokertanrisever/leaflet-ruler/master/src/leaflet-ruler.js"></script>
+
+
+		<!-- pie -->
+		<script src="https://code.highcharts.com/6.0.6/highcharts.js"></script>
+		
+		
+		<!-- alert -->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.4/dist/sweetalert2.all.min.js"></script>
+
+        <!-- Dependency to Leaflet Draw -->
+
+       <link rel="stylesheet" href="src/leaflet.draw.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+
+        <!--- mutant --->
+        <script type="text/javascript" src="js/Leaflet.GoogleMutant.js"></script>
+
+		<!----offline---->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.5.0/localforage.js"></script>
+    <script src="js/offline/leaflet-offline.js"></script>
+	<script src="js/offline/leaflet-offline.min.js"></script>
+	<script src="js/offline/TileLayer.Offline.js"></script>
+		
+        <style type="text/css" media="print">
+            @page { size: landscape;
+			}
+			.sidebar-bg.bg1 .sidebar-wrapper {
+              visibility: hidden !important;   }
+		#show-sidebar {
+              visibility: hidden !important;   }
+			 
+      }
+
+	  
+        </style>
+		
+		
+		
+
+        <style>
+	  
+
+
+            .cluster {
+                background: #3d3b42;
+                border-radius: 50%;
+                text-align: center;
+                color: white;
+                font-weight: 700;
+                border: 1px solid #3d3b42;
+                font-family: monospace;
+
+            }
+
+            .cluster:before {
+                content: ' ';
+                position: absolute;
+                border-radius: 50%;
+                z-index: -1;
+                top: 1px;
+                left: 1px;
+                right: 1px;
+                bottom: 1px;
+                border: 1px solid white;
+            }
+
+
+
+            .digits-1 {
+                font-size: 16px;
+                height: 34px;
+                width: 34px;
+                line-height: 35px;
+                margin-top: -17px;
+                margin-left: -17px;
+            }
+
+            .digits-1:before {
+                border-width: 2px;
+            }
+
+            .digits-2 {
+                font-size: 18px;
+                height: 48px;
+                width: 47px;
+                line-height: 47px;
+                border-width: 3px;
+                margin-top: -24px;
+                margin-left: -24px;
+            }
+
+            .digits-2:before {
+                border-width: 3px;
+            }
+
+            .digits-3 {
+                font-size: 18px;
+                height: 58px;
+                width: 58px;
+                line-height: 57px;
+                border-width: 4px;
+                margin-top: -29px;
+                margin-left: -29px;
+            }
+
+            .digits-3:before {
+                border-width: 4px;
+            }
+
+
+            body {
+                padding: 0;
+                margin: 0;
+			
+            }
+            html, body, #map {
+                height: 100%;
+                width: 100%;
+				zoom: 0.7;
+				
+            }
+            #map {
+
+                z-index: 0;
+
+
+            }
+
+
+            .leaflet-div-icon
+            {
+                background-image: url('https://officialpsds.com/imageview/7n/5y/7n5yjq_large.png?1521316554');
+                background:rgba(0, 0, 0,0.2) ;
+                border:5px solid rgba(0, 0, 0,0.6);
+                color:#000;
+                font-weight:bold;
+                text-align:center;
+                border-radius:50%;
+                line-height:30px;
+
+
+            }
+
+
+            .leaflet-popup-content-wrapper{
+                background-color: gray;
+                opacity: 0.8;
+                color: #FFFFFF;
+            }
+            .leaflet-popup-tip {
+                background: black;
+
+            }
+
+
+            .sidebar-wrapper {
+                top: 56px;
+            }
+
+            .leaflet-control-layers {
+                left: 5px;
+                top: 50px;
+            }
+
+            #show-sidebar {
+                //position: fixed;
+                left: -20px;
+                top: 80px;
+                border-radius: 0 4px 4px 0px;
+                width: 35px;
+                transition: left .3s ease;
+                transition-delay: .3s; }
+				
+            .sidebar-bg.bg1 .sidebar-wrapper {
+                background-image: url(img/bg22.jpg); }
+
+
+
+            .navbar-brand {
+                padding: 0px;
+            }
+            .navbar-brand>img {
+                width: 130px;
+                height: 36px;
+
+                overflow: hidden;
+                margin-top: -6px;
+            }
+
+
+            .modalDialog {
+                position: fixed;
+                font-family: Arial, Helvetica, sans-serif;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.8);
+                z-index: 99999;
+                opacity:0;
+                -webkit-transition: opacity 400ms ease-in;
+                -moz-transition: opacity 400ms ease-in;
+                transition: opacity 400ms ease-in;
+                pointer-events: none;
+            }
+            .modalDialog:target {
+                opacity:1;
+                pointer-events: auto;
+            }
+            .modalDialog > div {
+                width: 700px;
+                position: relative;
+                margin: 10% auto;
+                padding: 5px 20px 13px 20px;
+                border-radius: 10px;
+                background: #fff;
+                background: -moz-linear-gradient(#fff, #999);
+                background: -webkit-linear-gradient(#fff, #999);
+                background: -o-linear-gradient(#fff, #999);
+            }
+			
+			
+			 .close1 {
+                background: #606061;
+                color: #FFFFFF;
+                line-height: 25px;
+                position: absolute;
+                right: -12px;
+                text-align: center;
+                top: -10px;
+                width: 24px;
+                text-decoration: none;
+                font-weight: bold;
+                -webkit-border-radius: 12px;
+                -moz-border-radius: 12px;
+                border-radius: 12px;
+                -moz-box-shadow: 1px 1px 3px #000;
+                -webkit-box-shadow: 1px 1px 3px #000;
+                box-shadow: 1px 1px 3px #000;
+            }
+            .close1:hover {
+                background: #00d9ff;
+            }
+			
+          
+
+            .leaflet-control-container {
+                display: block;
+            }
+
+            .leaflet-control-layers {
+                left: 5px;
+                top: 50px;
+            }
+
+            .leaflet-touch .leaflet-control-attribution {
+                display: none;
+            }
+
+
+
+            .image {
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+
+
+            }
+            #map-container {
+                position: fixed;
+                top: 50px;
+                left: 0;
+                bottom: 0px;
+                right: 0;
+            }
+
+
+            .boxes {
+                margin: auto;
+                padding: 50px;
+                background: #484848;
+            }
+
+
+
+
+            label:hover {
+                display: inline-block;
+                //animation: swing ease-in-out .5s 1 alternate;
+
+                color: #ffffff;
+            }
+
+
+
+            input[type="checkbox"] + label:last-child { margin-bottom: 10px; margin-top:10px;}
+
+            input[type="checkbox"] {
+                visibility: hidden;
+
+
+            }
+            label {
+                display: inline-block;
+                font-weight: 400;
+                position: relative;
+                padding-left: 25px;
+                margin-bottom: 20px;
+                font: 12px/16px 'Open Sans', Arial, sans-serif;
+                color: #c9cacc; 
+                cursor: pointer;
+                transition: color 0.3s linear; /* vendorless fallback */
+                -o-transition: color 0.3s linear; /* opera */
+                -ms-transition: color 0.3s linear; /* IE 10 */
+                -moz-transition: color 0.3s linear; /* Firefox */
+                -webkit-transition: color 0.3s linear;
+
+            }
+            input[type="checkbox"] + label:before {
+
+                content: "\00a0";
+                display: block;
+                width: 8px;
+                height: 8px;
+                border: 0.9px solid #ffffff;
+                position: absolute;
+                left: 3px;
+                top: 0;
+                opacity: .6;
+                border-radius: 50%;
+
+
+
+            }
+            input[type="checkbox"]:checked + label:before {
+                display: inline-block;
+                position: absolute;
+                border: 0;
+                border-radius: 0%;
+            }
+            input[type="checkbox"]:checked + label:before{
+                content: "\2713";
+                color: #6cc0e5;
+
+
+
+            }
+
+            input[type="checkbox"]:focus + label::before {
+
+
+            }
+
+
+            .dropdown-menu a {
+                white-space:normal;
+            }
+            .dropdown-menu > li{position:relative;}
+
+            .dropdown-menu > li > i{position:absolute;left:0;top:3px;}
+
+
+            .leaflet-draw-toolbar a.leaflet-draw-draw-marker {
+
+                background-image: url('img/lala.jpg');
+                background-position: center;
+                //background-color: #ff6666;
+                background-size: 265px 70px;
+                border:2px solid rgba(0, 0, 0,0.6);
+
+
+            }
+
+            //.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-edit-edit {
+            /////	background: rgba(253, 201, 102, 0.5);
+
+            //}
+            //leaflet-touch .leaflet-draw-toolbar .leaflet-draw-edit-remove  {
+            //background: rgba(253, 201, 102, 0.5);
+            //}
+
+			
+		
+			body {
+			  font-family: "Open Sans", -apple-system,
+			  BlinkMacSystemFont, "Segoe UI", Roboto,
+			  Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica,
+			  Arial, sans-serif; 
+			}
+
+			
+			.swal-modal {
+			  background-color: rgba(63,255,106,0.69);
+			  border: 3px solid white;
+			}
+
+
+			#logo{
+				 position:fixed;
+				 
+				bottom:10px;
+				margin:10px;
+				padding:0;
+				width:20%;
+				z-index:1;
+
+			}
+		
+			
+					
+		html, body, #map {
+			width:100%;
+			height:100%;
+			padding:0px !important;
+			margin:0px !important;
+			zoom: 1;
+		
+			
+		}
+	
+		
+
+
+		#info {
+			font-weight:bold;
+			color:LightGray ;
+			display: inline-block;
+			font-family: Arial, Helvetica, sans-serif;
+			 font-size: 14px;
+			
+		}
+		#info1 {
+			font-weight:bold;
+			color:LightGray ;
+			font-family: Arial, Helvetica, sans-serif;
+			 font-size: 14px;
+
+		}
+	
+	
+		
+		
+		.modal-header {
+	  background-color:#2E2E2E;
+	  color: white;
+	}
+	
+	.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #2E2E2E !important;
+		}
+
+	
+	
+
+			@border-size: 5px;
+
+			#page {
+			 max-width: 90%;
+			 margin: auto;
+			position:fixed;
+			margin:50px;
+			top:0px;
+			right:0px;
+			padding:5px;
+			display:none;
+			
+			
+			}
+
+			.container {
+			  margin: 20px;
+			  margin-bottom: 0;
+			  position: relative;
+			  display: inline-block;
+			}
+
+			.body {
+			  position: relative;
+			  padding: 10px;
+			  width: 90%;
+			  background: rgba(27, 35, 50, 0.9);
+				border-top: 10px solid #2652A6;
+			  display: inline-block; 
+			  line-height: 1.5;
+			  box-shadow: inset 0 0 @border-size #333;
+			 border-radius: 25px;
+			 
+			
+			}
+
+			.info {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+			}
+			.legend {
+			background-color: “black”;
+			line-height: 25px;
+			color: #555;
+			width: auto;
+
+			}
+			.legend i {
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin-right: 8px;
+			opacity: 0.7;
+			border-radius: 25px;
+			}
+			
+			h2 {
+			  font-size: 20px;
+			}
+
+			
+			   #floating-panel1 {
+        position: absolute;
+        top: 10px;
+         left: 50%;
+		transform: translateX(-50%) ;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+	display: none;
+        
+		
+      }
+	  
+
+	  
+	  
+	  
+	   #floating-panel {
+        position: absolute;
+        top: 10px;
+         left: 50%;
+		transform: translateX(-50%) ;
+        z-index: 5;
+		}
+        
+	  
+	@media screen and (max-width: 900px) {
+	     #floating-panel {
+        position: absolute;
+        top: 10px;
+         left: 50%;
+		transform: translateX(-50%) ;
+        z-index: 5;
+		display: none;
+        
+      }
+       }
+		
+
+	  
+	  
+
+   .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px;
+	
+	 
+    }
+
+    .search_input{
+    color: black;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+	
+	
+	 
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+	
+	
+	
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+	
+	 
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+
+	
+	 
+    }
+	
+	
+	
+
+
+
+        </style>
+		
+		 <link rel="stylesheet" href="css/leaflet.measurecontrol.css" />
+		<script src="js/leaflet.measurecontrol.js"></script>
+		<script src="js/leaflet.measurecontrol.min.js"></script>
+		  
+	
+    </head>
+	
+	
+    <body>
+	
+
+
+         <nav class="navbar navbar-expand-md navbar-dark bg-dark bg1 fixed-top">
+            <!-- Brand/logo -->
+           <a class="navbar-brand"  id="brand" href=""><img src="img/gosafe.png" alt=""> </a>
+			<a class="navbar-brand"  id="brand" href="http://www.patt.gov.gr/site/"><img src="img/alfa.png" alt=""> </a>
+			
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+			
+            </ul>
+		
+				
+				<ul class="navbar-nav">
+			<li class="nav-item">
+			 <a id="navbar-header" href="index.html">
+                 <a class="nav-link" id="paso1" href="index.html"> <strong>ΕΛ</strong> </a>
+                </a>
+				 </li>
+				</ul>
+				
+            <ul class="navbar-nav">
+			<div class="d-none d-lg-block">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://accesslab.gr">  powered by  <strong>AccessLab</strong> </a>
+                </li>
+				
+				</div>
+                <li class="nav-item">
+
+                </li>
+            </ul>
+			
+
+        </nav>
+
+
+
+        <div class="page-wrapper chiller-theme sidebar-bg bg1 ">
+
+            <div id="map-container">
+
+                <div id="map" ></div>
+	
+				
+				<div id="page">
+				
+			  <div class="container">
+			  
+			  <div class="body">
+			 
+			  <button type="button" class="close" aria-label="Close" onclick="document.getElementById('page').style.display='none'" >
+			  <span aria-hidden="true">&times;</span>
+			</button>
+				<p>
+				   <span id="info" > </span><br>
+				  <span id="info1" > </span> 
+				</p>
+			  </div>
+			   
+			</div>
+					</div>		
+				
+	
+                <div id='image_X' class="image">
+                    <img src=""  alt="" id='' >
+                </div>
+            </div>
+
+            <a id="show-sidebar" class="btn btn-sm btn-dark " href="#">
+                <i class="fas fa-bars"></i>
+            </a>
+            <nav id="sidebar" class="sidebar-wrapper">
+                <div class="sidebar-content">
+                    <!-- sidebar-brand  -->
+                    <div class="sidebar-brand">
+                        <a href="#">MENU</a>
+                        <div id="close-sidebar">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+		
+
+                    <div class="sidebar-menu">
+                        <ul>
+                            <li class="header-menu">
+                                <span>General</span>
+                            </li>
+                            
+
+                            <li class="sidebar-dropdown">
+                                <a href="#">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Municipalities</span>
+                                </a>
+                                <div class="sidebar-submenu">
+                                    <ul>
+                                       
+                                        <li>
+                                            <a href="#" id="moschato_1"> Moschato-Tavros</a> 
+                                        </li>
+                                        <li>
+                                            <a href="#" id="alimos_1">Alimos</a> 
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+							
+							<li class="sidebar-dropdown">
+                                <a href="#">
+                                    <i class="fa fa-layer-group"></i>
+                                    <span>Data</span>
+                                </a>
+                                <div class="sidebar-submenu">
+                                    <ul>
+
+                                        <li>
+                                            <input type="checkbox" id="box-1" checked="checked">
+                                            <label for="box-1">Ramps</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="box-2" checked="checked">
+                                            <label for="box-2">Sidewalks</label>
+                                        </li>
+										
+										 <li>
+                                            <input type="checkbox" id="box-4" checked="checked">
+                                            <label for="box-4">Crossings</label>
+                                        </li>
+										 <li>
+                                            <input type="checkbox" id="box-5" checked="checked">
+                                            <label for="box-5">Boundaries</label>
+                                        </li>
+
+                                        <li>
+                                            <input type="checkbox" id="box-3" checked="checked">
+                                            <label for="box-3">Poi's</label>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </li>
+							
+							  <li class="sidebar-dropdown">
+                                <a href="#">
+                                   <i class="fas fa-directions"></i>
+                                    <span>Navigation</span>
+                                </a>
+                                <div class="sidebar-submenu">
+                                    <ul>
+
+                                        <!--  <li>
+  
+                                              <a href="#" id="locate-position">  <i class="fas fa-street-view"> </i> Geolocation</a> 
+  
+                                          </li> -->
+                                         
+                                        <li>
+								
+                                           <a href="#" id="nav_2">Moschato-Tavros</a> 
+                                        </li>
+                                        <li>
+										
+                                            <a href="#" id="nav_3">Alimos</a> 
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+							
+							
+							
+							
+                            <li class="sidebar-dropdown">
+                                <a href="#">
+                                    <i class="fa fa-chart-line"></i>
+                                    <span>Project charts</span>
+                                </a>
+                                <div class="sidebar-submenu">
+                                    <ul>
+                                        <li>
+                                            <a href="#centralModal2" data-toggle="modal" >Sidewalks Evaluation Moshato</a>
+                                        </li>
+										  <li>
+                                            <a href="#centralModal1" data-toggle="modal">Sidewalks Evaluation Alimos</a>
+                                        </li>
+										
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sidebar-dropdown">
+                                <a href="#">
+                                    <i class="fa fa-globe"></i>
+                                    <span>Basemaps</span>
+                                </a>
+                                <div class="sidebar-submenu">
+                                    <ul>
+
+                                        <li>
+
+                                            <input type="checkbox" id="map_1"  class="map"  onclick="selectOnlyThis(this.id)" checked="checked" >
+                                            <label for="map_1"> Navigation </label>
+                                        </li>
+                                          <li>
+
+                                            <input type="checkbox" id="map_3"  class="map"  onclick="selectOnlyThis(this.id)" >
+                                            <label for="map_3">Light-Offline</label>
+
+                                        </li> 
+
+                                       <li>
+                                            <input type="checkbox" id="map_2"  class="map" onclick="selectOnlyThis(this.id)"  >
+                                            <label for="map_2">Satellite</label>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="header-menu" >
+                                <span>Extras</span>
+                            </li>
+                            <li>
+                                <a href="#centralModal" data-toggle="modal">
+                                    <i class="fa fa-book" ></i>
+                                    <span>Description</span>
+                                </a>
+                            </li>
+							
+							 <li>
+                                <a href="#centralModal3" data-toggle="modal">
+                                    <i class="fas fa-book-reader"></i>
+                                    <span>Terms of Use</span>
+                                </a>
+                            </li>
+                            <li>
+
+                                <a href="#" id="printableArea" onclick="print_current_page()" > <i class="fa fa-print" > </i> Print </a> 
+
+                            </li>
+							
+							 <li>
+                                <a href="#centralModal4" data-toggle="modal">
+                                    <i class="fa fa-download" aria-hidden="true"></i>
+                                    <span>Downloads</span>
+                                </a>
+                            </li>
+						    <li>
+                                <a data-toggle="modal" data-target="#modalContactForm">
+                                    <i class="far fa-comment-dots"></i>
+                                    <span>Comments</span>
+                                </a>
+								
+						
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- sidebar-menu  -->
+                </div>
+                <!-- sidebar-footer  -->
+                <div class="sidebar-footer">
+                    <div class="dropdown">
+
+                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bell"></i>
+                            <span class="badge badge-pill badge-warning notification">3</span>
+                        </a>
+                        <div class="dropdown-menu notifications" aria-labelledby="dropdownMenuMessage">
+                            <div class="notifications-header">
+                                <i class="fa fa-bell"></i>
+                                Notifications
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">
+                                <div class="notification-content">
+                                    <div class="icon">
+                                        <i class="fas fa-check text-success border border-success"></i>
+                                    </div>
+                                    <div class="content">
+                                        <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                                            elit. In totam explicabo</div>
+                                        <div class="notification-time">
+                                            6 minutes ago
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <div class="notification-content">
+                                    <div class="icon">
+                                        <i class="fas fa-exclamation text-info border border-info"></i>
+                                    </div>
+                                    <div class="content">
+                                        <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
+                                            elit. In totam explicabo</div>
+                                        <div class="notification-time">
+                                            Today
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+
+                    </div>
+            </nav>
+
+        </div>
+		
+	
+		
+		<!-- Central Modal Small DESCRIPTION---->
+<div  class="modal custom fade" id="centralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Change class .modal-sm to change the size of the modal -->
+  <div class="modal-dialog modal-lg" role="document" >
+
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">GOSAFE </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+	  
+	  
+      <div class="modal-body" >
+	  
+			<p><b>GOSAFE</b> is a web GIS platform with open data of accessibility and mobility in Moschato-Tavro and Alimo. 
+                    The user is able to search for accessible ramps and routes, measure a distance and report an obstacle, 
+                    such as parking violation.</p>
+					
+		</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary"  data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Central Modal Small DESCRIPTION-->
+
+
+
+		<!-- Central Modal Small DOWNLOAD---->
+<div  class="modal custom fade" id="centralModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Change class .modal-sm to change the size of the modal -->
+  <div class="modal-dialog modal-lg" role="document" >
+
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">DOWNLOAD</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+	  
+	  
+      <div class="modal-body" >
+	  
+			<p> Select and download the municipality'S data you are interested in (geojson file type).</p>
+			<p>The user can download the data to their computer and view and edit by using special GIS software. </p>
+				<p>	<a href="data/moschato.rar">Municipality of Moschato-Tavros</a></p>
+				<p>	<a href="data/alimos.rar">Municipality of Alimos</a></p>	
+
+			
+		</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary"  data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Central Modal Small DOWNLOAD-->
+
+
+
+	<!-- Central Modal Small USE---->
+<div  class="modal custom fade" id="centralModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Change class .modal-sm to change the size of the modal -->
+  <div class="modal-dialog modal-lg" role="document" >
+
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">TERMS OF USE</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+	  
+	  
+      <div class="modal-body" style="overflow: scroll ;max-height: 250px; ">
+	  
+			<p> <b>STEPS</b> </p>
+                    
+					
+						 <p><b>Step 1ο:</b> Informations</p>
+						 
+						  <p>	<a href="data/ΕΓΧΕΙΡΙΔΙΟ-ΧΡΗΣΗΣ-ΤΕΛΙΚΩΝ-ΧΡΗΣΤΩΝ.pdf">Download user manual</a></p>
+			<p>In the box on the left, the user can be informed about access points and ramps, as well as for the accessibility of the pavements by pressing the "Data" button. 
+			Sidewalks are categorized as accessible (green), acceptable (yellow) and hard accessible (red). 
+				In evaluating sidewalks their width is taken into account,
+				their inclination and assessment by a wheelchair user. The user can focus
+				in the municipalities of Moschato - Taurus and Alimos by pressing the button "Municipalities"
+				the map of Portal depicts accessible municipal services such as town halls,
+				KEP, sports facilities, etc. Finally, the "statistics" button shows data
+				on the accessibility of the pavements to the two municipalities.</p>
+			<p><b>Step 2ο:</b> Navigation</p>
+			<p>
+			The portal allows the user to search for an accessible route
+			for its pedestrian movement by pressing the "Navigation" key and then inserting the purple
+			and the blue symbol at the points he wishes on the map. App shows shortest (purple color)
+			and the safest (light blue) route through accessible ramps, sidewalks and crossings.
+			It is a simple and easy-to-use routing application with a choice of starting point and destination.</p>
+			<p><b>Step 3ο:</b> Participation</p>
+			<p>The user can be actively involved in shaping the urban environment
+			and decision-making processes. Pressing the key with the "exclamation mark" in the bottom right
+			and then at a point on the map, the user can indicate an obstacle he or she encounters,
+			such as off-road parking or damage to ramps and sidewalks. By clicking on the "Comments" button,
+			the user can contact us and suggest some urban intervention to improve accessibility to Municipalities,
+			but also ways to upgrade the platform's functionality.</p>
+
+			
+		</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary"  data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Central Modal Small USE-->
+
+
+
+
+<!-- Central Modal large CHARTS-->
+<div class="modal fade" id="centralModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Change class .modal-sm to change the size of the modal -->
+  <div class="modal-dialog modal-lg" role="document">
+
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">SIDEWALKS EVALUATION CHART ALIMOS</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="container1"  >
+	  
+           
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END Central Modal  CHARTS -->
+
+
+<!-- Central Modal large CHARTS-->
+<div class="modal fade" id="centralModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Change class .modal-sm to change the size of the modal -->
+  <div class="modal-dialog modal-lg" role="document">
+
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">SIDEWALKS EVALUATION CHART MOSCHATO</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="container2" >
+	  
+           
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END Central Modal  CHARTS -->
+
+
+
+		
+
+
+		
+		<div class="modal fade"class="modal hide" data-backdrop="static" data-keyboard="false" id="ModalWarning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-info " role="document">
+  
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading">FOR YOUR INFORMATION</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-3 text-center">
+            <img src="img/access_logo.png" alt="IMG of Avatars"
+              class="img-fluid z-depth-1-half rounded-circle">
+            <div style="height: 10px"></div>
+            <p class="title mb-0">The team</p>
+            <p class="text-muted " style="font-size: 13px">accesslab</p>
+          </div>
+
+          <div class="col-9">
+            <p> 
+			The management and protection of the user data of the application user is governed by the provisions
+			the existing legislation on the protection of personal data, the decisions of the competent authority
+			This project is about protecting the confidentiality and privacy of the information provided and
+			comply with applicable law (GDPR - EU 2016/679). <br> This platform use cookies
+           </p>
+            <p class="card-text"><strong>Informations about the General Data Protection Regulation</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!--Footer-->
+       <div class="modal-footer justify-content-center">
+        <a type="button" id="cookieModalConsent" class="btn btn-outline-info waves-effect" data-dismiss="modal">ACCEPT</a>
+		<select onchange="location = this.options[this.selectedIndex].value;">
+			 <option>Language/Γλώσσα</option>
+			<option value="https://gosafe.gov.gr/index.html">Ελληνικά</option>
+		</select>​
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Central Modal Warning Demo-->
+
+
+		
+		<!--END------WARNING START PAGE-->
+
+		
+		
+	<!-- section contact form -->
+			
+			<div class="modal fade" id="modalContactForm"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		  aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header text-center">
+				<h4 class="modal-title w-100 font-weight-bold">Place your comment</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  
+			<form id ="contact-form" name="contact-form" action="contactmail/contact_mail.php" method="POST">
+			  <div class="modal-body mx-3">
+				<div class="md-form mb-5">
+				  <i class="fas fa-user prefix grey-text"></i>
+				  <input type="text" id="name" name="name" class="form-control validate" placeholder="Name">
+				</div>
+
+				<div class="md-form mb-5">
+				  <i class="fas fa-envelope prefix grey-text"></i>
+				  <input type="email" id="email" name="email"  class="form-control validate" placeholder="Your e-mail address">
+				 
+				</div>
+
+				<div class="md-form mb-5">
+				  <i class="fas fa-tag prefix grey-text"></i>
+				  <input type="text" id="subject" name="subject" class="form-control validate" placeholder="Subject">
+				</div>
+
+				<div class="md-form">
+				  <i class="fas fa-pencil prefix grey-text"></i>
+				  <textarea type="text" id="message" name="message" class="md-textarea form-control" rows="4" placeholder="Your message"></textarea>
+				</div>
+				
+			  </div>  
+		 </form>
+			  <div class="modal-footer d-flex justify-content-center">
+				<button type="submit" value="submit"  onclick="validateForm()" class="btn btn-primary"  >Send<i class="fas fa-paper-plane-o ml-1"> </i> </button>
+			  </div> <div class="status" id="status"></div>
+			</div>
+      </div>
+		  </div>
+		</div>
+
+
+
+	   <script>
+	   
+	   
+		
+            var mapopts = {zoomControl: false,
+                //      zoomSnap: 0.1
+            };
+
+            var map = L.map('map', mapopts).setView([37.932264, 23.728112], 13);
+
+			var grayscale = L.tileLayer('https://api.mapbox.com/styles/v1/kiousisp/ck0caeu773vzu1cnohjne5evj/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoia2lvdXNpc3AiLCJhIjoiY2swY2EwODZnMHp1NTNjcGVoeHFienVydCJ9.oeQ42AwDeTTJkbpB9LFE_Q', {
+                maxZoom: 19,
+                
+                bounds: [[34.582435, 18.769232], [42.206741, 29.918491]],
+				crossOrigin: true
+            }).addTo(map);
+			
+			/*var Stamen =   L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
+				maxZoom: 18,
+				attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+			
+		
+			
+			});*/
+			
+			
+			var tilesDb = {
+    getItem: function (key) {
+        return localforage.getItem(key);
+    },
+
+    saveTiles: function (tileUrls) {
+        var self = this;
+
+        var promises = [];
+
+        for (var i = 0; i < tileUrls.length; i++) {
+            var tileUrl = tileUrls[i];
+
+            (function (i, tileUrl) {
+                promises[i] = new Promise(function (resolve, reject) {
+                    var request = new XMLHttpRequest();
+                    request.open('GET', tileUrl.url, true);
+                    request.responseType = 'blob';
+                    request.onreadystatechange = function () {
+                        if (request.readyState === XMLHttpRequest.DONE) {
+                            if (request.status === 200) {
+                                resolve(self._saveTile(tileUrl.key, request.response));
+                            } else {
+                                reject({
+                                    status: request.status,
+                                    statusText: request.statusText
+                                });
+                            }
+                        }
+                    };
+                    request.send();
+                });
+            })(i, tileUrl);
+        }
+
+        return Promise.all(promises);
+    },
+
+    clear: function () {
+        return localforage.clear();
+    },
+
+    _saveTile: function (key, value) {
+        return this._removeItem(key).then(function () {
+            return localforage.setItem(key, value);
+        });
+    },
+
+    _removeItem: function (key) {
+        return localforage.removeItem(key);
+    }
+};
+
+			
+			var Stamen = L.tileLayer.offline('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', tilesDb, {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    subdomains: 'abc',
+    minZoom: 13,
+    maxZoom: 19,
+    crossOrigin: true
+});
+
+/*
+var offlineControl = L.control.offline(Stamen, tilesDb, {
+      position: 'bottomleft',
+    saveButtonHtml: '<i class="fa fa-download" aria-hidden="true"></i>',
+    removeButtonHtml: '<i class="fa fa-trash" aria-hidden="true"></i>',
+    confirmSavingCallback: function (nTilesToSave, continueSaveTiles) {
+        if (window.confirm('Save ' + nTilesToSave + '?')) {
+            continueSaveTiles();
+        }
+    },
+    confirmRemovalCallback: function (continueRemoveTiles) {
+        if (window.confirm('Remove all the tiles?')) {
+            continueRemoveTiles();
+        }
+    },
+    minZoom: 13,
+    maxZoom: 19
+});
+offlineControl.addTo(map);
+
+
+Stamen.on('offline:below-min-zoom-error', function () {
+    alert('Can not save tiles below minimum zoom level.');
+});
+
+Stamen.on('offline:save-start', function (data) {
+    console.log('Saving ' + data.nTilesToSave + ' tiles.');
+});
+
+Stamen.on('offline:save-end', function () {
+    alert('All the tiles were saved.');
+});
+
+Stamen.on('offline:save-error', function (err) {
+    console.error('Error when saving tiles: ' + err);
+});
+
+Stamen.on('offline:remove-start', function () {
+    console.log('Removing tiles.');
+});
+
+Stamen.on('offline:remove-end', function () {
+    alert('All the tiles were removed.');
+});
+
+Stamen.on('offline:remove-error', function (err) {
+    console.error('Error when removing tiles: ' + err);
+});*/
+
+			mapboxgl.accessToken = 'pk.eyJ1Ijoia2lvdXNpc3AiLCJhIjoiY2swY2EwODZnMHp1NTNjcGVoeHFienVydCJ9.oeQ42AwDeTTJkbpB9LFE_Q';
+             var mapbox = new mapboxgl.Map({
+             container: 'map',
+             style: 'mapbox://styles/kiousisp/ck0ca2vc905wx1cnycx3rbpdz',
+             zoom: 9.0
+             });
+			 
+			mapboxgl.accessToken = 'pk.eyJ1Ijoia2lvdXNpc3AiLCJhIjoiY2swY2EwODZnMHp1NTNjcGVoeHFienVydCJ9.oeQ42AwDeTTJkbpB9LFE_Q';
+             var mapbox2 = new mapboxgl.Map({
+             container: 'map',
+             style: 'mapbox://styles/kiousisp/ck0caeu773vzu1cnohjne5evj',
+             zoom: 9.0
+             });
+	
+			
+			
+			var satmap =  L.tileLayer('https://api.mapbox.com/styles/v1/kiousisp/ck0ca2vc905wx1cnycx3rbpdz/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoia2lvdXNpc3AiLCJhIjoiY2swY2EwODZnMHp1NTNjcGVoeHFienVydCJ9.oeQ42AwDeTTJkbpB9LFE_Q', {
+                maxZoom: 19,
+                bounds: [[34.582435, 18.769232], [42.206741, 29.918491]]
+				
+				
+
+            });
+
+			///////////////////OFFLINE////////////////////////
+
+					
+
+
+            var baseLayers = {
+                "Satellite":satmap,
+                "Roadmap": grayscale,
+				"Light"	:	Stamen
+				
+            };
+			
+			
+			
+	
+
+            //PIE
+
+			
+			///////////////////chart Alimos
+			   $(function () {
+
+                Highcharts.setOptions({
+                    colors: ['#5cd65c', '#ffa64d', '#ff4d4d']
+                });
+                var chart = new Highcharts.Chart({
+                    title: {
+                        text: 'Percentage of Accessible sidewalks 38%'
+                    },
+                    chart: {
+                        renderTo: 'container1',
+                        type: 'pie',
+                        backgroundColor: 'none',
+                    },
+                    plotOptions: {
+                        pie: {
+                            innerSize: '60%'
+                        }
+                    },
+                    series: [{
+                            name: 'Sidewalks',
+                            data: [
+                                ['Accessible', 326],
+                                ['Medium accessible', 640],
+                                ['Hard accessible', 1592],
+                            ]}]
+                },
+                function (chart) { // on complete
+                    var textX = chart.plotLeft + (chart.plotWidth * 0.5);
+                    var textY = chart.plotTop + (chart.plotHeight * 0.5);
+
+                    var span = '<span id="pieChartInfoText1" style="position:absolute; text-align:center;">';
+                    span += '<span style="font-size: 32px">38%</span><br>';
+                    span += '<span style="font-size: 16px">Προσβάσιμα</span>';
+                    span += '</span>';
+
+                    $("#addText1").append(span);
+                    span = $('#pieChartInfoText1');
+                    span.css('left', textX + (span.width() * -0.3));
+                    span.css('top', textY + (span.height() * -0.2));
+                });
+            });
+			
+			
+			///////////////////chart Moschato
+			
+			   $(function () {
+
+                Highcharts.setOptions({
+                    colors: ['#5cd65c', '#ffa64d', '#ff4d4d']
+                });
+                var chart = new Highcharts.Chart({
+                    title: {
+                        text: 'Percentage of Accessible sidewalks 67%'
+                    },
+                    chart: {
+                        renderTo: 'container2',
+                        type: 'pie',
+                        backgroundColor: 'none',
+                    },
+                    plotOptions: {
+                        pie: {
+                            innerSize: '60%'
+                        }
+                    },
+                    series: [{
+                            name: 'Sidewalks',
+                            data: [
+                                ['Accessible', 578],
+                                ['Medium accessible', 501],
+                                ['Hard accessible', 711],
+                            ]}]
+                },
+                function (chart) { // on complete
+                    var textX = chart.plotLeft + (chart.plotWidth * 0.5);
+                    var textY = chart.plotTop + (chart.plotHeight * 0.5);
+
+                    var span = '<span id="pieChartInfoText2" style="position:absolute; text-align:center;">';
+                    span += '<span style="font-size: 32px">67%</span><br>';
+                    span += '<span style="font-size: 16px">Προσβάσιμα</span>';
+                    span += '</span>';
+
+                    $("#addText2").append(span);
+                    span = $('#pieChartInfoText2');
+                    span.css('left', textX + (span.width() * -0.0));
+                    span.css('top', textY + (span.height() * -0.3));
+                });
+            });
+			
+				///END OF CHARTS
+				
+				
+
+
+            function restylemap(feature, hazard) {
+
+
+                if (feature.properties.vathmos < "0.2990") {
+                    return {
+                        opacity: 0.5,
+                        color: '#ff4d4d'
+                    };
+                }
+                else if (feature.properties.vathmos < "0.6999") {
+                    return {
+                        opacity: 0.5,
+                        color: '#ffd800'
+
+                    };
+                }
+                else {
+                    return {
+                        opacity: 0.5,
+                        color: '#66ff66'
+
+                    };
+                }
+            }
+
+            function restylemap2(feature, hazard) {
+
+
+                if (feature.properties.final_esti < "3") {
+                    return {
+                        opacity: 0.5,
+                        color: '#ff4d4d'
+                    };
+                }
+                else if (feature.properties.final_esti < "7") {
+                    return {
+                        opacity: 0.5,
+                        color: '#ffd800'
+
+                    };
+                }
+                else {
+                    return {
+                        opacity: 0.5,
+                        color: '#66ff66'
+
+                    };
+                }
+            }
+
+            function restylemap3(feature, hazard) {
+
+
+                if (feature.properties.VATHMOS_1 < "3") {
+                    return {
+                        opacity: 0.5,
+                        color: '#ff4d4d'
+                    };
+                }
+                else if (feature.properties.VATHMOS_1 < "7") {
+                    return {
+                        opacity: 0.5,
+                        color: '#ffd800'
+
+                    };
+                }
+                else {
+                    return {
+                        opacity: 0.5,
+                        color: '#66ff66'
+
+                    };
+                }
+            }
+
+
+
+            function restylediktio(feature, hazard) {
+
+
+                if (feature.properties.Τύπος == "Πεζόδρομος") {
+                    return {
+                        color: '#008000',
+                        stroke: false
+                    };
+                }
+                else if (feature.properties.Τύπος == "Δρόμος") {
+                    return {
+                        fillOpacity: .50,
+                        color: '#595959',
+                        stroke: false
+
+                    };
+                }
+
+                else {
+                    return {
+                        fillOpacity: .0,
+                        color: '',
+                        stroke: false
+
+
+                    };
+                }
+            }
+			
+			
+			
+			function style_diavaseis(feature) {
+			return {
+                weight: 5,
+                opacity: .7,
+                lineJoin: 'round',
+				 dashArray: '1,10'
+            };
+				}
+
+
+
+            function style1(feature) {
+                switch (String(feature.properties['estimation'])) {
+                    case '1':
+                        return {
+                            iconUrl: 'img/ramp.png',
+                            radius: 7.0,
+                            opacity: 1,
+                            color: 'rgba(0,0,0,0.960784)',
+                            dashArray: '',
+                            lineCap: 'butt',
+                            lineJoin: 'miter',
+                            weight: 0.1,
+                            fill: true,
+                            fillOpacity: 0.7,
+                            fillColor: 'rgba(204,58,28,0.960784)',
+                        }
+                        break;
+                    case '2':
+                        return {
+                            radius: 7.0,
+                            opacity: 1,
+                            color: 'rgba(0,0,0,0.960784)',
+                            dashArray: '',
+                            lineCap: 'butt',
+                            lineJoin: 'miter',
+                            weight: 0.1,
+                            fill: true,
+                            fillOpacity: 0.7,
+                            fillColor: 'rgba(246,209,22,0.960784)',
+                        }
+                        break;
+                    case '3':
+                        return {
+                            radius: 7.0,
+                            opacity: 1,
+                            color: 'rgba(0,0,0,1.0)',
+                            dashArray: '',
+                            lineCap: 'butt',
+                            lineJoin: 'miter',
+                            weight: 0.1,
+                            fill: true,
+                            fillOpacity: 0.7,
+                            fillColor: 'rgba(20,127,59,1.0)',
+                        }
+                        break;
+                    default:
+                        return {
+                            radius: 7.0,
+                            opacity: 1,
+                            color: 'rgba(0,0,0,1.0)',
+                            dashArray: '',
+                            lineCap: 'butt',
+                            lineJoin: 'miter',
+                            weight: 1,
+                            fill: true,
+                            fillOpacity: 1,
+                            fillColor: 'rgba(225,123,189,1.0)',
+                        }
+                }
+
+            }
+
+
+				function oria(feature) {
+					return {
+						 weight: 5,
+						lineCap: 'square', // Optional, just to avoid round borders.
+						color: 'black',
+						dashArray: '15,10',
+						fillOpacity: 0
+					};
+				}
+				
+				
+         
+
+            var pois_moscha = new L.geoJson(pois_moscha_english, {
+                attribution: '<a href=""></a>',
+				pane: 'pane750',
+                // onEachFeature: pop4,
+                pointToLayer: function (feature, latlng) {
+
+                    var rampicon = L.icon({
+                        iconUrl: 'img/pois_moschato_english/' + feature.properties.name + '.png',
+                        iconSize: [45, 50],
+                    });
+
+                    return L.marker(latlng, {icon: rampicon});
+                },
+            });
+			
+            pois_moscha.on("click", function (evt) {
+                var content = evt.layer.feature.properties.name;
+                var win = L.control.window(map, {title: 'Informations', maxWidth: 500, modal: true})
+                        .content(content)
+
+                        .show()
+            })
+
+
+
+
+            map.addLayer(pois_moscha);
+
+
+
+
+            var pois_alimos = new L.geoJson(pois_alimos_english, {
+                attribution: '<a href=""></a>',
+				pane: 'pane750',
+                // onEachFeature: pop4,
+                pointToLayer: function (feature, latlng) {
+
+                    var rampicon = L.icon({
+                        iconUrl: 'img/pois_alimos_english/' + feature.properties.name + '.png',
+                        iconSize: [45, 50],
+                    });
+
+                    return L.marker(latlng, {icon: rampicon});
+                },
+            });
+			
+			
+            pois_alimos.on("click", function (evt) {
+                var content = evt.layer.feature.properties.name;
+                var win = L.control.window(map, {title: 'Details', maxWidth: 400, modal: true})
+                        .content(content)
+
+                        .show()
+            })
+
+            map.addLayer(pois_alimos);
+
+
+            var markers = L.markerClusterGroup({
+                maxClusterRadius: 100,
+                polygonOptions: true,
+                iconCreateFunction: function (cluster) {
+                    var count = cluster.getChildCount();
+
+                    // figure out how many digits long the number is
+                    var digits = (count + '').length;
+
+
+                    return new L.divIcon({
+                        html: count,
+                        className: 'cluster digits-' + digits,
+                        iconSize: null
+                    });
+                },
+                //Disable all of the defaults:
+                spiderfyOnMaxZoom: true, showCoverageOnHover: true, zoomToBoundsOnClick: true
+
+            });
+
+
+
+          
+
+            var rabes_m2 = new L.geoJson(rampes_moschato, {
+                attribution: '<a href=""></a>',
+                //onEachFeature: pop1,
+                pointToLayer: function (feature, latlng) {
+                    var context = {
+                        feature: feature,
+                        variables: {}
+                    };
+                    /*  return L.circleMarker(latlng, {
+                     radius: 5,
+                     fillColor: "black",
+                     color: "black"
+                     });
+                     
+                     */
+                    var rampicon = L.icon({
+                        iconUrl: 'img/ramp21.png',
+                        iconSize: [30, 30],
+                    });
+
+                    return L.marker(latlng, {icon: rampicon});
+
+                },
+            });
+            // map.addLayer(rampes);
+
+            markers.addLayer(rabes_m2);
+
+            map.addLayer(markers);
+
+
+            var rabes_m3 = new L.geoJson(rampes_alimos, {
+                attribution: '<a href=""></a>',
+                //onEachFeature: pop1,
+                pointToLayer: function (feature, latlng) {
+                    var context = {
+                        feature: feature,
+                        variables: {}
+                    };
+                    /*  return L.circleMarker(latlng, {
+                     radius: 5,
+                     fillColor: "black",
+                     color: "black"
+                     });
+                     
+                     */
+                    var rampicon = L.icon({
+                        iconUrl: 'img/ramp21.png',
+                        iconSize: [30, 30],
+                    });
+
+                    return L.marker(latlng, {icon: rampicon});
+
+                },
+            });
+            // map.addLayer(rampes);
+
+            markers.addLayer(rabes_m3);
+
+            map.addLayer(markers);
+			
+			
+			
+			map.createPane('labels');
+			map.getPane('labels').style.zIndex = 250;
+			map.createPane("pane700").style.zIndex = 750;
+			map.createPane("pane750").style.zIndex = 700;
+			map.createPane("pane800").style.zIndex = 650;
+			map.createPane("pane150").style.zIndex = 200;
+			map.createPane("pane100").style.zIndex = 150;
+			
+			
+			
+			
+			function getColor(d) {
+				return d === 'Accessible'  ? "#66ff66" :
+					   d === 'Medium accessible'  ? "#ffd800" :
+					   d === 'Hard accessible' ? "#ff4d4d" :
+					
+									"#ff7f00";
+			}
+
+		 
+					
+					var legend = L.control({position: 'bottomright'});
+			legend.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'info legend');
+			labels = ['<strong>Sidewalks</strong>'],
+			categories = ['Accessible','Medium accessible','Hard accessible'];
+
+			for (var i = 0; i < categories.length; i++) {
+
+					div.innerHTML += 
+					labels.push(
+						'<i class="circle" style="background:' + getColor(categories[i]) + '"></i> ' +
+					(categories[i] ? categories[i] : '+'));
+
+				}
+				div.innerHTML = labels.join('<br>');
+			return div;
+			};
+			legend.addTo(map);		
+					
+			
+		
+			
+
+			var oria_alimos = L.geoJSON(oria_alimos, {
+						// onEachFeature: pop2,
+						style: oria,
+						pane: 'labels'
+					}).addTo(map);
+				
+					
+			var oria_moschato = L.geoJSON(oria_moschato, {
+						// onEachFeature: pop2,
+						style: oria,
+						pane: 'labels'
+					}).addTo(map);	
+					
+
+
+
+
+            var pezodromia2 = L.geoJSON(moschato, {
+                // onEachFeature: pop2,
+				pane: 'pane150',
+                style: restylemap2
+            }).addTo(map);
+
+            var pezodromia3 = L.geoJSON(alimos, {
+                // onEachFeature: pop2,
+				pane: 'pane150',
+                style: restylemap3
+            }).addTo(map);
+
+			
+			  var diavaseis_1 = L.geoJSON(diavaseis_alimos, {
+                // onEachFeature: pop2,
+				style: style_diavaseis
+            }).addTo(map);
+			
+			 var diavaseis_2 = L.geoJSON(diavaseis_moschato, {
+                // onEachFeature: pop2,
+				style: style_diavaseis
+            }).addTo(map);
+
+            L.control.zoom({
+                position: 'topright',
+				
+                    zoomInTitle: "Zoom in",
+					zoomOutTitle: "Zoom out"
+					
+               
+            }).addTo(map);
+
+
+   
+	var geocoder = L.Control.geocoder({position: 'topright',placeholder: 'Αναζήτησε μια οδό ή περιοχή...'}
+	
+	).addTo(map); 
+
+
+            lc = L.control.locate({
+                position: 'topright',
+                strings: {
+                    title: "Show me my position!"
+                }
+            }).addTo(map);
+			
+		
+			L.drawLocal.draw.handlers.polyline.tooltip.start = "'Click' a start point to measure";
+			L.drawLocal.draw.handlers.polyline.tooltip.cont = "'Click' to continue the measure";
+			L.drawLocal.draw.handlers.polyline.tooltip.end = "'Click' a last point to complete the measure";
+			L.Control.MeasureControl.TITLE = "Measure a distance: By clicking the button with the «ruler» you can measure the distance tha you want to cross.";
+
+
+
+			L.Control.measureControl( {
+			 
+			position: 'topright',
+		
+			
+			} ).addTo(map);
+			
+
+            function pop4(feature, layer) {
+                var popupContent =
+                        "<dl><dt> </dt>"
+                        + "<dd>" + feature.properties['name'] + "</dd>"
+
+                layer.bindPopup(popupContent, {maxHeight: 400});
+            }
+
+            function addControlPlaceholders(map) {
+                var corners = map._controlCorners,
+                        l = 'leaflet-',
+                        container = map._controlContainer;
+                function createCorner(vSide, hSide) {
+                    var className = l + vSide + ' ' + l + hSide;
+                    corners[vSide + hSide] = L.DomUtil.create('div', className, container);
+                }
+                createCorner('horizontalcenter', 'bottom');
+            }
+            addControlPlaceholders(map);
+
+
+            function switchLayer(collection, layerKey) {
+                if (layerKey in collection) {
+                    $.each(collection, function (key, layer) {
+                        if (key === layerKey) {
+                            if (!map.hasLayer(layer)) {
+                                map.addLayer(layer);
+                            }
+                        } else if (map.hasLayer(layer)) {
+                            map.removeLayer(layer);
+                        }
+                    });
+                } else {
+                    console.log('There is no layer key by the name "' + layerKey + '" in the specified object.');
+                }
+            }
+
+            function print_current_page()
+            {
+			//Print Page
+			window.print();
+            }
+			
+
+            $("#map_1").on('click', function () {
+                switchLayer(baseLayers, "Roadmap");
+                $('#map_2').prop('checked', false); // Unchecks it
+               $('#map_3').prop('checked', false); // Unchecks it
+
+                document.getElementById('map_1').setAttribute('checked', true);
+                
+            });
+			
+            $("#map_2").on('click', function () {
+                switchLayer(baseLayers, "Satellite");
+                $('#map_1').prop('checked', false); // Unchecks it
+               $('#map_3').prop('checked', false); // Unchecks it
+
+                document.getElementById('map_2').setAttribute('checked', true);
+            
+            });
+			
+            $("#map_3").on('click', function () {
+                switchLayer(baseLayers, "Light");
+                $('#map_2').prop('checked', false); // Unchecks it
+                $('#map_1').prop('checked', false); // Unchecks it
+
+                document.getElementById('map_3').setAttribute('checked', true);
+                
+            });
+			
+            $('#locate-position').on('click', function () {
+                map.locate({setView: true, maxZoom: 15});
+            });
+
+			
+				
+
+            $('#box-1').on('click', function () {
+                if (map.hasLayer(markers)) {
+
+                    map.removeLayer(markers);
+                    document.getElementById("").style.visibility = "hidden";
+                } else {
+
+                    map.addLayer(markers);
+                    document.getElementById("").style.visibility = "visible";
+                }
+
+
+
+            });
+            $('#box-2').on('click', function () {
+                if (map.hasLayer(pezodromia2)) {
+
+
+                    map.removeLayer(pezodromia2);
+                    map.removeLayer(pezodromia3);
+					
+				map.removeControl(legend);
+				
+					
+                } else {
+
+                    map.addLayer(pezodromia2);
+                    map.addLayer(pezodromia3);
+					map.addControl(legend);
+						
+				
+                }
+
+            });
+
+
+            $('#box-3').on('click', function () {
+                if (map.hasLayer(pois_moscha)) {
+
+
+
+                    map.removeLayer(pois_moscha);
+					map.removeLayer(pois_alimos);
+
+                } else {
+
+                    map.addLayer(pois_moscha);
+					map.addLayer(pois_alimos);
+
+                }
+
+            });
+			
+			
+			  $('#box-4').on('click', function () {
+                if (map.hasLayer(diavaseis_1)) {
+
+
+					map.removeLayer(diavaseis_2);
+                    map.removeLayer(diavaseis_1);
+			
+                } else {
+
+                    map.addLayer(diavaseis_1);
+					map.addLayer(diavaseis_2);
+
+                }
+
+            });
+			
+			
+			  $('#box-5').on('click', function () {
+                if (map.hasLayer(oria_alimos)) {
+
+
+					map.removeLayer(oria_alimos);
+					map.removeLayer(oria_moschato);
+                   
+			
+                } else {
+
+                    map.addLayer(oria_alimos);
+					map.addLayer(oria_moschato);
+					
+
+                }
+
+            });
+
+         
+            $("#moschato_1").click(function () {
+                map.fitBounds(pezodromia2.getBounds());
+			
+
+                return false;
+            });
+            $("#alimos_1").click(function () {
+                map.fitBounds(pezodromia3.getBounds());
+				
+                return false;
+            });
+			
+			
+		
+			
+			
+			
+				
+			
+			
+			
+			var violetIcon = new L.Icon({
+				  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+				  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+				  iconSize: [25, 41],
+				  iconAnchor: [12, 41],
+				  popupAnchor: [1, -34],
+				  shadowSize: [41, 41]
+				});
+
+				
+				
+				
+		
+			//-----navigation MOSCHATO ----//
+			
+            $("#nav_2").click(function () {
+			
+                map.fitBounds(pezodromia2.getBounds());
+                    map.removeLayer(pezodromia2);
+                    map.removeLayer(pezodromia3);
+					map.removeLayer(diavaseis_2);
+                    map.removeLayer(diavaseis_1);
+					map.removeLayer(markers);
+					map.removeControl(legend);
+					
+					$('#box-1').prop('checked', false); // Unchecks it
+					$('#box-2').prop('checked', false);
+					$('#box-3').prop('checked', true);
+					$('#box-4').prop('checked', false);
+					
+				
+					map.eachLayer(function (layer) {
+						map.removeLayer(layer);
+					});
+			
+				
+          var grayscale = L.tileLayer('https://api.mapbox.com/styles/v1/kiousisp/ck0caeu773vzu1cnohjne5evj/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoia2lvdXNpc3AiLCJhIjoiY2swY2EwODZnMHp1NTNjcGVoeHFienVydCJ9.oeQ42AwDeTTJkbpB9LFE_Q', {
+                maxZoom: 19,
+                
+                bounds: [[34.582435, 18.769232], [42.206741, 29.918491]],
+				useCache: true,
+			crossOrigin: true
+            }).addTo(map);
+			
+			map.addLayer(pois_alimos);
+			map.addLayer(pois_moscha);
+			map.addLayer(oria_alimos);
+			map.addLayer(oria_moschato);
+		//	map.addLayer(drawnItems );
+			map.addControl(lc);
+					
+		
+		var layerGroup = L.layerGroup( {
+		  pane: 'pane800'
+		}).addTo(map);
+				
+		var geoserverUrl = "https://central.accesslab.gr/geoserver/";
+		var selectedPoint = null;
+
+		var source = null;
+		var target = null;
+
+	  var pathLayer = L.geoJSON(null);
+	  var pathLayer2 = L.geoJSON(null);
+				
+		// draggable marker for starting point. Note the marker is initialized with an initial starting position
+		
+		
+		var sourceMarker = L.marker([37.952019,23.682403], {
+		//var sourceMarker = L.marker([-1.283147351126288, 36.822524070739746], {
+			draggable: true,
+			
+			icon: violetIcon
+		})
+			.on("dragend", function(e) {
+				selectedPoint = e.target.getLatLng();
+				getVertex(selectedPoint);
+				getRoute();
+			
+			})
+			.addTo(layerGroup);
+
+		// draggbale marker for destination point.Note the marker is initialized with an initial destination positon
+	
+		var targetMarker = L.marker([37.94954457436226, 23.677167892456055], {
+		//var targetMarker = L.marker([-1.286107765621784, 36.83449745178223], {
+			draggable: true,
+			
+		})
+		.on("dragend", function(e) {
+			selectedPoint = e.target.getLatLng();
+			getVertex(selectedPoint);
+			getRoute();
+		
+		})
+		.addTo(layerGroup);
+	
+		
+		// function to get nearest vertex to the passed point
+		function getVertex(selectedPoint) {
+			var url = `${geoserverUrl}/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=mosxato:nearest_vertex&outputformat=application/json&viewparams=x:${
+				selectedPoint.lng};y:${selectedPoint.lat};`;
+			$.ajax({
+				url: url,
+				async: false,
+				//method: "POST",
+				success: function(data) {
+					//console.log(data);
+					loadVertex(
+						data,
+						selectedPoint.toString() === sourceMarker.getLatLng().toString()
+					);
+				},
+				error: function() { alert('Failed!'); }
+			});
+		}
+
+		// function to update the source and target nodes as returned from geoserver for later querying
+		function loadVertex(response, isSource) {
+			//console.log(response.features);
+			var features = response.features;
+			map.removeLayer(pathLayer);
+			map.removeLayer(pathLayer2);
+			if (isSource) {
+				source = features[0].properties.id;
+			} else {
+				target = features[0].properties.id;
+			}
+		}
+
+		
+		
+		
+		// function to get the shortest path from the give source and target nodes
+		function getRoute() {
+			var url = `${geoserverUrl}/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=mosxato:shortest_path&maxFeatures=50&outputformat=application/json&viewparams=source:${source};target:${target};`;
+			var url2 = `${geoserverUrl}/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=mosxato:safest_path&maxFeatures=50&outputformat=application/json&viewparams=source:${source};target:${target};`;
+
+	
+	
+
+		$.getJSON(url, function(data) {
+			//console.log(data.features.properties.time);
+			var timed = 0;
+			var dist = 0;
+			
+
+
+		function style1(feature) {
+		return {
+			
+			color: color,
+		   weight: weight,
+		   opacity:opacity
+		};
+	}
+
+
+			for (var key in data.features) {
+				timed += data.features[key].properties.time;
+				dist += data.features[key].properties.distance;
+			};
+			// alert("Time to travel: " +roundToTwo(timed*60) + " minutes"+ "\nDistance to travel: "+Math.round(dist*1000)+" meters");
+			map.removeLayer(pathLayer);
+			pathLayer = L.geoJSON(data, { style: style1(color= 'SlateBlue', weight = 8, opacity = 0.8)});
+			
+			
+			pathLayer.bindPopup("<strong>Estimated time: </strong>" +roundToTwo(timed*60) + "minutes" +  "<br /><strong>Distance:</strong> "+Math.round(dist*1000)+" meters");
+			
+			map.addLayer(pathLayer);
+			//pathLayer.bindPopup("<strong>Εκτιμώμενος χρόνος: </strong>" +roundToTwo(timed*60) + " λεπτά" +  "<br /><strong>Απόσταση:</strong> "+Math.round(dist*1000)+" μέτρα").openPopup();
+			
+			
+			if (roundToTwo(timed*60) != 0) {
+			
+			document.getElementById("info").innerHTML = "<span style='color: SlateBlue'>Shorter route</span><br><strong>Estimated time: </strong>" +roundToTwo(timed*60) + " minutes" +  "<br /><strong>Distance:</strong> "+Math.round(dist*1000)+"meters";
+           
+		   } else {
+
+		document.getElementById("info").innerHTML = "<strong>No route found:<p><br> Α. The path is too short or<br>Β. The infrastructures are not accessible.<br></p>Try again!</strong>";
+
+			}
+			
+	
+          //  $("#floating-panel1").stop();
+          //  $("#floating-panel1").fadeIn("fast");
+			
+			 $("#page").stop();
+            $("#page").fadeIn("fast");
+			
+			
+			
+			pathLayer.on('mouseover', function() {
+			this.setStyle({
+				color: 'red'  , //or whatever style you wish to use;
+				
+			});
+			pathLayer.bringToFront();
+			
+		});
+					pathLayer.on('mouseout', function() {
+					this.setStyle({
+				color: 'SlateBlue'   //or whatever style you wish to use;
+									});
+			});
+
+
+           
+          //  $("#feature_infos").fadeOut(5000);
+	
+		});
+		
+
+			$.getJSON(url2, function(data2) {
+			//console.log(data.features.properties.time);
+			var timed = 0;
+			var dist = 0;
+			
+			function style2(feature) {
+			return {
+				
+				color: color,
+			   weight: weight,
+			   opacity:opacity
+			};
+		}
+
+
+			for (var key in data2.features) {
+				timed += data2.features[key].properties.time;
+				dist += data2.features[key].properties.distance;
+			};
+			// alert("Time to travel: " +roundToTwo(timed*60) + " minutes"+ "\nDistance to travel: "+Math.round(dist*1000)+" meters");
+			map.removeLayer(pathLayer2);
+			pathLayer2 = L.geoJSON(data2, {style: style2(color= 'MediumTurquoise', weight = 8, opacity = 0.8)});
+			
+			
+			pathLayer2.bindPopup("<strong>Estimated time: </strong>" +roundToTwo(timed*60) + "minutes" +  "<br /><strong>Distance:</strong> "+Math.round(dist*1000)+" meters");
+			
+			map.addLayer(pathLayer2);
+			//pathLayer.bindPopup("<strong>Εκτιμώμενος χρόνος: </strong>" +roundToTwo(timed*60) + " λεπτά" +  "<br /><strong>Απόσταση:</strong> "+Math.round(dist*1000)+" μέτρα").openPopup();
+			
+			
+			if (roundToTwo(timed*60) != 0) {
+			
+			document.getElementById("info1").innerHTML = "<span style='color: MediumTurquoise'>Safest route </span><br><strong> Estimated time: </strong>" +roundToTwo(timed*60) + "minutes" +  "<br /><strong>Distance:</strong> "+Math.round(dist*1000)+"meters";
+           
+		   } 
+		   else {
+		document.getElementById("info1").innerHTML = "  ";
+			}
+			
+			
+			//$("#floating-panel1").stop();
+           // $("#floating-panel1").fadeIn("fast");
+			
+            $("#page").stop();
+            $("#page").fadeIn("fast");
+			
+				pathLayer2.on('mouseover', function() {
+				this.setStyle({
+					color: 'red'   //or whatever style you wish to use;
+				});
+				
+				pathLayer2.bringToFront();
+			});
+
+			pathLayer2.on('mouseout', function() {
+				this.setStyle({
+				color: 'MediumTurquoise'   //or whatever style you wish to use;
+									});
+				
+			});
+
+           
+          //  $("#feature_infos").fadeOut(5000);
+	
+		});
+		
+		}
+				function roundToTwo(num) {    
+					return +(Math.round(num + "e+2")  + "e-2");
+				}
+			
+
+
+				
+		
+				getVertex(sourceMarker.getLatLng());
+				getVertex(targetMarker.getLatLng());
+				getRoute();
+				
+                return false;	
+			
+            });
+				
+		
+			//-----END navigation MOSCHATO ----//
+			
+			
+			
+			
+		
+			
+			
+			//-----navigation ALIMOS ----//
+			
+			
+			
+			
+            $("#nav_3").click(function () {
+		
+			
+			
+                map.fitBounds(pezodromia3.getBounds());
+				
+					
+                    map.removeLayer(pezodromia2);
+                    map.removeLayer(pezodromia3);
+					map.removeLayer(diavaseis_2);
+                    map.removeLayer(diavaseis_1);
+					map.removeLayer(markers);
+					map.removeControl(legend);
+					
+					
+					$('#box-1').prop('checked', false); // Unchecks it
+					$('#box-2').prop('checked', false);
+					$('#box-3').prop('checked', true);
+					$('#box-4').prop('checked', false);
+						
+				map.eachLayer(function (layer) {
+						map.removeLayer(layer);
+					});
+			var grayscale = L.tileLayer('https://api.mapbox.com/styles/v1/kiousisp/ck0caeu773vzu1cnohjne5evj/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoia2lvdXNpc3AiLCJhIjoiY2swY2EwODZnMHp1NTNjcGVoeHFienVydCJ9.oeQ42AwDeTTJkbpB9LFE_Q', {
+                maxZoom: 19,
+                
+                bounds: [[34.582435, 18.769232], [42.206741, 29.918491]],
+				useCache: true,
+			crossOrigin: true
+            }).addTo(map);
+			 	
+			map.addLayer(pois_alimos);
+			map.addLayer(pois_alimos);
+			map.addLayer(pois_moscha);
+			map.addLayer(oria_alimos);
+			map.addLayer(oria_moschato);
+			//map.addLayer(drawnItems );
+			map.addControl(lc);
+	
+					
+	
+
+		var layerGroup = L.layerGroup( {
+		  pane: 'pane800'
+		}).addTo(map);
+				
+					
+		var geoserverUrl = "https://central.accesslab.gr/geoserver/";
+		var selectedPoint = null;
+
+		var source = null;
+		var target = null;
+
+		var pathLayer = L.geoJSON(null);
+		var pathLayer2 = L.geoJSON(null);
+		// draggable marker for starting point. Note the marker is initialized with an initial starting position
+		var sourceMarker = L.marker([37.918400, 23.730165], {
+		//var sourceMarker = L.marker([-1.283147351126288, 36.822524070739746], {
+			draggable: true,
+			icon: violetIcon
+		})
+			.on("dragend", function(e) {
+				selectedPoint = e.target.getLatLng();
+				getVertex(selectedPoint);
+				getRoute();
+			})
+			.addTo( layerGroup );
+			
+	  
+	
+		
+
+		// draggbale marker for destination point.Note the marker is initialized with an initial destination positon
+		var targetMarker = L.marker([37.917798, 23.734425], {
+		//var targetMarker = L.marker([-1.286107765621784, 36.83449745178223], {
+			draggable: true,
+			
+		})
+		.on("dragend", function(e) {
+			selectedPoint = e.target.getLatLng();
+			getVertex(selectedPoint);
+			getRoute();
+		})
+		.addTo( layerGroup );
+
+
+		// function to get nearest vertex to the passed point
+		function getVertex(selectedPoint) {
+			var url = `${geoserverUrl}/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=alimos:nearest_vertex&outputformat=application/json&viewparams=x:${selectedPoint.lng};y:${selectedPoint.lat};`;
+			$.ajax({
+				url: url,
+				async: false,
+				//method: "POST",
+				success: function(data) {
+					//console.log(data);
+					loadVertex(
+						data,
+						selectedPoint.toString() === sourceMarker.getLatLng().toString()
+					);
+				},
+				error: function() { alert('Failed!'); }
+			});
+		}
+		
+		
+		
+
+		// function to update the source and target nodes as returned from geoserver for later querying
+		function loadVertex(response, isSource) {
+			//console.log(response.features);
+			var features = response.features;
+			map.removeLayer(pathLayer);
+			map.removeLayer(pathLayer2);
+			if (isSource) {
+				source = features[0].properties.id;
+			} else {
+				target = features[0].properties.id;
+			}
+		}
+
+	
+   
+		// function to get the shortest path from the give source and target nodes
+		function getRoute() {
+		var url = `${geoserverUrl}/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=alimos:shortest_path&outputformat=application/json&viewparams=source:${source};target:${target};`;
+		var url2 = `${geoserverUrl}/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=alimos:safest_path&outputformat=application/json&viewparams=source:${source};target:${target};`;
+
+	
+		
+		$.getJSON(url, function(data) {
+			//console.log(data.features.properties.time);
+			var timed = 0;
+			var dist = 0;
+			
+
+
+		function style1(feature) {
+		return {
+			
+			color: color,
+		   weight: weight,
+		   opacity:opacity
+		};
+	}
+
+
+			for (var key in data.features) {
+				timed += data.features[key].properties.time;
+				dist += data.features[key].properties.distance;
+			};
+			// alert("Time to travel: " +roundToTwo(timed*60) + " minutes"+ "\nDistance to travel: "+Math.round(dist*1000)+" meters");
+			map.removeLayer(pathLayer);
+			pathLayer = L.geoJSON(data, { style: style1(color= 'SlateBlue', weight = 8, opacity = 0.8)});
+			
+			
+			pathLayer.bindPopup("<strong>Estmated time: </strong>" +roundToTwo(timed*60) + "minutes" +  "<br /><strong>Distance:</strong> "+Math.round(dist*1000)+"meters");
+			
+			map.addLayer(pathLayer);
+			//pathLayer.bindPopup("<strong>Εκτιμώμενος χρόνος: </strong>" +roundToTwo(timed*60) + " λεπτά" +  "<br /><strong>Απόσταση:</strong> "+Math.round(dist*1000)+" μέτρα").openPopup();
+			
+		if (roundToTwo(timed*60) != 0) {
+			
+			document.getElementById("info").innerHTML = "<span style='color: SlateBlue'>Shortest route</span><br><strong>Estimated time: </strong>" +roundToTwo(timed*60) + "minutes" +  "<br /><strong>Απόσταση:</strong> "+Math.round(dist*1000)+"meters";
+           
+		   } else {
+		document.getElementById("info").innerHTML = "<strong>No route found:<p><br> Α. The path is too short or<br>Β. The infrastructures are not accessible.<br></p>Try again!</strong>";
+			}
+			
+			//$("#floating-panel1").stop();
+           // $("#floating-panel1").fadeIn("fast");
+			
+            $("#page").stop();
+            $("#page").fadeIn("fast");
+			
+			pathLayer.on('mouseover', function() {
+			this.setStyle({
+				color: 'red'  , //or whatever style you wish to use;
+				
+			});
+			pathLayer.bringToFront();
+			
+		});
+					pathLayer.on('mouseout', function() {
+					this.setStyle({
+				color: 'SlateBlue'   //or whatever style you wish to use;
+									});
+			});
+
+
+	
+		});
+		
+		
+		
+			$.getJSON(url2, function(data2) {
+			//console.log(data.features.properties.time);
+			var timed = 0;
+			var dist = 0;
+			
+			function style2(feature) {
+			return {
+				
+				color: color,
+			   weight: weight,
+			   opacity:opacity
+			};
+		}
+
+
+			for (var key in data2.features) {
+				timed += data2.features[key].properties.time;
+				dist += data2.features[key].properties.distance;
+			};
+			// alert("Time to travel: " +roundToTwo(timed*60) + " minutes"+ "\nDistance to travel: "+Math.round(dist*1000)+" meters");
+			map.removeLayer(pathLayer2);
+			pathLayer2 = L.geoJSON(data2, {style: style2(color= 'MediumTurquoise', weight = 8, opacity = 0.8)});
+			
+			
+			pathLayer2.bindPopup("<strong>Estimated time: </strong>" +roundToTwo(timed*60) + "minutes" +  "<br /><strong>Distance:</strong> "+Math.round(dist*1000)+"meters");
+			
+			map.addLayer(pathLayer2);
+			//pathLayer.bindPopup("<strong>Εκτιμώμενος χρόνος: </strong>" +roundToTwo(timed*60) + " λεπτά" +  "<br /><strong>Απόσταση:</strong> "+Math.round(dist*1000)+" μέτρα").openPopup();
+			
+			
+		if (roundToTwo(timed*60) != 0) {
+			
+			document.getElementById("info1").innerHTML = "<span style='color: MediumTurquoise'>Safest route: </span><br><strong> Estimated time: </strong>" +roundToTwo(timed*60) + "minutes" +  "<br /><strong>Distance:</strong> "+Math.round(dist*1000)+"meters";
+           
+		   } 
+		   else {
+		document.getElementById("info1").innerHTML = "  ";
+			}
+			
+	
+            $("#page").stop();
+            $("#page").fadeIn("fast");
+			
+				pathLayer2.on('mouseover', function() {
+				this.setStyle({
+					color: 'red'   //or whatever style you wish to use;
+				});
+				
+				pathLayer2.bringToFront();
+			});
+
+			pathLayer2.on('mouseout', function() {
+				this.setStyle({
+				color: 'MediumTurquoise'   //or whatever style you wish to use;
+									});
+				
+			});
+
+           
+          //  $("#feature_infos").fadeOut(5000);
+	
+		});
+		
+				}
+				
+
+				function roundToTwo(num) {    
+					return +(Math.round(num + "e+2")  + "e-2");
+				}
+			
+				
+				getVertex(sourceMarker.getLatLng());
+				getVertex(targetMarker.getLatLng());
+				getRoute();
+			
+			
+				
+         return false;
+		
+            });
+			
+			
+			
+			//-----END navigation ALIMOS ----//
+			
+			
+			
+			
+			
+			
+			
+		//-----contact form----//	
+		function validateForm() {
+			
+			document.getElementById('status').innerHTML = "Αποστολή...";
+			formData = {
+				'name'     : $('input[name=name]').val(),
+				'email'    : $('input[name=email]').val(),
+				'subject'  : $('input[name=subject]').val(),
+				'message'  : $('textarea[name=message]').val()
+			};
+
+
+		   $.ajax({
+			url : "contactmail/contact_mail.php",
+			type: "POST",
+			data : formData,
+			success: function(data, textStatus, jqXHR)
+			{ 
+
+				$('#status').text(data.message);
+				
+				if (data.code) //If mail was sent successfully, reset the form.
+				$('#status').text(data.message);
+				$('#contact-form').closest('form').find("input[type=text], textarea").val("")
+			
+			},
+			error: function (jqXHR, textStatus, errorThrown)
+			{
+				$('#status').text(jqXHR);
+			}
+			 
+		});
+
+		}
+
+  
+        </script>
+		<script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; 
+(function () { var done = false; var script = document.createElement('script'); script.async = true; 
+script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); 
+script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) 
+{ var w = new PCWidget({c: 'ad3cc5d5-03a9-4901-91e7-44924feb6b85', f: true }); done = true; } }; })();</script>
+  
+			<!--WARNING START PAGE-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" integrity="sha256-uEFhyfv3UgzRTnAZ+SEgvYepKKB0FW6RqZLrqfyUNug=" crossorigin="anonymous"></script>
+		
+		<script type="text/javascript">
+    $(window).on('load',function(){
+       // $('#ModalWarning').modal('show');
+	   
+	   
+	
+		 if ($.cookie('modal_shown') == null) {
+	
+        $('#ModalWarning').modal('show');
+		 
+		 
+    }
+	
+		 $('#cookieModalConsent').on('click', function () {
+        $.cookie('modal_shown', 'yes', { expires: 1, path: '/' });
+		
+		});
+    });
+	
+</script>
+
+
+	
+    </body>
+</html>
+
